@@ -18,28 +18,32 @@
         .enter { width: 100px; }
         #message { font-size: 36px; margin-bottom: 20px; color: #ff4081; font-weight: bold; }
         .heart { position: absolute; font-size: 20px; color: #ff4081; animation: floatUp 1s ease-out forwards; }
+		h1 {font-size: 80px;}
         @keyframes floatUp {
             0% { transform: translateY(0); opacity: 1; }
             100% { transform: translateY(-100px); opacity: 0; }
         }
 		@media screen and (max-width: 650px) {
-			.key { width: 7.5vw; height: 60px; margin: 0.8vw; font-size: 18px; font-weight: bold; text-transform: uppercase; background-color: #818384; color: white; border: none; cursor: pointer; transition: background-color 0s ease; }
+			.key { width: 7.5vw; height: 9vw; margin: 0.8vw; font-size: 18px; font-weight: bold; text-transform: uppercase; background-color: #818384; color: white; border: none; cursor: pointer; transition: background-color 0s ease; }
 			.enter { width: 15vw; }
+			h1{font-size: 12vw;}
 		}
 		@media screen and (max-width: 500px) {
-			.key { text-align: center; width: 7.5vw; height: 60px; margin: 0.8vw; font-size: 3.5vw; font-weight: bold; text-transform: uppercase; background-color: #818384; color: white; border: none; cursor: pointer; transition: background-color 0s ease; }
-			.enter { width: 15vw; }
+			.key { text-align: center; width: 7.5vw; height: 9vw; margin: 0.8vw; font-size: 3.5vw; font-weight: bold; text-transform: uppercase; background-color: #818384; color: white; border: none; cursor: pointer; transition: background-color 0s ease; }
+			.enter { width: 15vw; letter-spacing: 0px}
 		}
-		@media screen and (max-width: 380px) {
-		    .grid { display: grid; grid-template-columns: repeat(5, 15vw); grid-template-rows: repeat(6, 15vw); gap: 2.5vw; }
-			.cell { width: 15vw; height: 15vw; border: 0.7vw solid #3a3a3c; text-align: center; font-size: 32px; line-height: 60px; font-weight: bold; text-transform: uppercase; background-color: #121213; color: white; transition: background-color 1.5s ease; }
+		@media screen and (max-width: 450px) {
+		    .grid { display: grid; grid-template-columns: repeat(5, 15vw); grid-template-rows: repeat(6, 15vw); gap: 0.3vw; }
+			.cell { width: 13vw; height: 13vw; border: 0.6vw solid #3a3a3c; text-align: center; font-size: 7vw; line-height: 13vw; font-weight: bold; text-transform: uppercase; background-color: #121213; color: white; transition: background-color 1.5s ease; }
+			.keyboard { display: flex; flex-direction: column; align-items: center; margin-top: 3vw; }
+
 		}
 }
     </style>
 </head>
 <body>
     <p id="message"></p>
-    <h1 style="font-size:6vw;">Abby's Wordle</h1>
+    <h1>Abby's Wordle</h1>
     <div class="grid-container">
         <div id="grid" class="grid"></div>
     </div>
