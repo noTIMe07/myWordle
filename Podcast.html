@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Episodes For Abby</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #7f1d1d, #000);
+      color: white;
+      font-family: sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+    .header {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    .album-cover {
+      width: 11rem;
+      height: 11rem;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+    .title {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    .description {
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+    }
+    .meta {
+      margin-top: 1rem;
+      color: #ccc;
+      font-size: 0.875rem;
+    }
+    table {
+      width: 100%;
+      margin-top: 2.5rem;
+      border-collapse: collapse;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.5rem;
+      font-size: 0.875rem;
+    }
+    thead {
+      border-bottom: 1px solid #555;
+      color: #ccc;
+    }
+    tbody tr {
+      border-top: 1px solid #222;
+    }
+    tbody tr:hover {
+      background-color: #1a1a1a;
+    }
+    .song-title {
+      font-weight: 600;
+    }
+    .artist {
+      font-size: 0.75rem;
+      color: #aaa;
+    }
+    audio {
+      margin-top: 0.25rem;
+      width: 16rem;
+    }
+    .text-right {
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="AlbumCover/cover.JPEG" alt="Album Cover" class="album-cover">
+      <div>
+        <h1 class="title">My baby ❤️</h1>
+        <p class="description">I hope these Episodes can make you feel better when you feel sad. Each Episode is named after one emotion you might feel 😊</p>
+        <p class="meta">Tim • 1 Save • 5 Episodes • 31 Minutes</p>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Titel</th>
+          <th>Date added</th>
+          <th class="text-right">Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>
+            <div class="song-title">Intro</div>
+            <div class="artist">Tim</div>
+            <audio controls>
+                <source src="Episodes/Intro.m4a" type="audio/mp4">
+            </audio>
+          </td>
+          <td>22. May 2025</td>
+          <td class="text-right">2:14</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>
+            <div class="song-title">Feeling bored</div>
+            <div class="artist">Tim</div>
+            <audio controls>
+                <source src="Episodes/Feeling bored.m4a" type="audio/mp4">
+            </audio>
+          </td>
+          <td>24. May 2025</td>
+          <td class="text-right">7:08</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>
+            <div class="song-title">Going to the doctor</div>
+            <div class="artist">Tim</div>
+            <audio controls>
+                <source src="Episodes/Going to the doctor.m4a" type="audio/mp4">
+            </audio>
+          </td>
+          <td>26. May 2025</td>
+          <td class="text-right">10:17</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>
+            <div class="song-title">Beeing insecure</div>
+            <div class="artist">Tim</div>
+            <audio controls>
+                <source src="Episodes/Beeing insecure.m4a" type="audio/mp4">
+            </audio>
+          </td>
+          <td>26. May 2025</td>
+          <td class="text-right">5:07</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>
+            <div class="song-title">Dropping Tim off</div>
+            <div class="artist">Tim</div>
+            <audio controls>
+                <source src="Episodes/Doppring Tim off.m4a" type="audio/mp4">
+            </audio>
+          </td>
+          <td>27. May 2025</td>
+          <td class="text-right">7:03</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
