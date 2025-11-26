@@ -1,0 +1,176 @@
+<!-- Updated version using heart emojis for animation -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Letter for Abby</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1: #ffecd2;
+      --bg2: #fcb69f;
+      --card:#ffffffcc;
+      --accent:#ff6b81;
+      --muted:#6b6b6b;
+    }
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial;overflow-x:hidden;}
+    body{
+      background: radial-gradient(circle at 10% 20%, #fff7f2 0%, transparent 20%), 
+                  linear-gradient(135deg,var(--bg1),var(--bg2));
+      display:flex;align-items:center;justify-content:center;padding:32px;
+      position:relative;
+    }
+
+    /* Full-screen floating heart layer using emojis */
+    .hearts{
+      position:fixed;
+      top:0;left:0;width:100%;height:100%;
+      pointer-events:none;
+      overflow:visible;
+      font-size:24px;
+      z-index:5;
+    }
+    .heart{
+      position:absolute;
+      font-size:20px;
+      opacity:0;
+    }
+
+    .stage{
+      width:min(980px,96%);
+      background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.75));
+      border-radius:20px;padding:28px;box-shadow:0 10px 30px rgba(0,0,0,0.12);backdrop-filter: blur(6px);
+      display:grid;grid-template-columns: 1fr 360px;gap:24px;align-items:start;
+      position:relative;z-index:10;
+    }
+
+    header{grid-column:1/-1;display:flex;align-items:center;gap:16px}
+    .logo{
+      width:72px;height:72px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-family:Great Vibes, cursive;font-size:28px;color:white;background:linear-gradient(135deg,var(--accent),#ff9fb2);box-shadow:0 6px 18px rgba(255,107,129,0.18);
+    }
+
+    h1{margin:0;font-family:Great Vibes, cursive;font-size:40px;color:#2b2b2b}
+    p.lead{margin:6px 0 0;color:var(--muted)}
+
+    .letter{background:var(--card);padding:22px;border-radius:14px;min-height:320px;box-shadow:0 6px 18px rgba(0,0,0,0.06);position:relative}
+    .letter .meta{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+    .meta h3{margin:0;font-size:16px}
+    .meta small{color:var(--muted)}
+
+    .content{font-size:16px;line-height:1.6;color:#2b2b2b}
+    .content .highlight{color:var(--accent);font-weight:600}
+
+    .gallery{display:flex;flex-direction:column;gap:12px}
+    .picture img{width:100%;border-radius:12px;object-fit:cover;display:block;height:220px}
+    .thumbs{display:flex;gap:8px}
+    .thumbs img{width:72px;height:72px;object-fit:cover;border-radius:10px;border:3px solid white;box-shadow:0 6px 14px rgba(0,0,0,0.08);cursor:pointer}
+    .thumbs img.active{outline:3px solid var(--accent)}
+
+    aside{padding:12px;background:linear-gradient(180deg,#fff,#fff0);border-radius:12px;height:100%;display:flex;flex-direction:column;gap:12px}
+    aside h4{margin:0}
+    .buttons{display:flex;gap:8px;flex-wrap:wrap}
+    button{border:0;padding:10px 14px;border-radius:10px;background:var(--accent);color:white;font-weight:600;cursor:pointer;box-shadow:0 8px 18px rgba(255,107,129,0.14)}
+    .btn-ghost{background:transparent;color:var(--accent);border:2px solid rgba(255,107,129,0.12)}
+
+    .footer-note{font-size:13px;color:var(--muted);margin-top:auto}
+
+    @media (max-width:880px){
+      .stage{grid-template-columns:1fr;}
+      aside{order:3}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Full-screen heart container -->
+  <div class="hearts"></div>
+
+  <main class="stage" role="main">
+    <header>
+      <div class="logo">♥</div>
+    </header>
+
+    <section class="letter" aria-label="Love letter">
+      <div class="meta">
+        <div>
+          <h3 id="fromName">From: Tim</h3>
+          <small id="date">November 26, 2025</small>
+        </div>
+      </div>
+
+      <article class="content" id="letterContent">
+        <p>Hi Abby,</p>
+        <p>I wanted to write this letter for you because I think now is a good time for a little surprise. 😊 I've been thinking a lot about you today. You feel so warm and cozy when you are laying in my arms and I can't wait to cuddle you next to the Christmas tree. I love how the Christmas lights reflect in your eyes and make your whole face glow.</p>
+        <p>Soon you'll be able to open the first gift from your advent calendar, and I'll be there before you open the last one. I made sure to include some pictures from summer in this letter so they can warm you up until I'm back.</p>
+        <p>I love you Abby ❤️,<br><br><strong id="signedName">Tim</strong></p>
+      </article>
+    </section>
+
+    <aside>
+      <div class="gallery">
+        <div class="picture" id="pictureWrap">
+          <img id="hero" alt="Picture" src="Pictures/1.JPG">
+        </div>
+        <div class="thumbs" id="thumbs">
+          <img src="Pictures/1.JPG" data-full="Pictures/1.JPG" alt="1">
+          <img src="Pictures/2.JPG" data-full="Pictures/2.JPG" alt="2">
+          <img src="Pictures/3.JPEG" data-full="Pictures/3.JPEG" alt="3">
+          <img src="Pictures/4.JPG" data-full="Pictures/4.JPG" alt="4">
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <script>
+  // Thumbnail switching
+  document.querySelectorAll('.thumbs img').forEach(img => {
+    img.addEventListener('click', () => {
+      document.getElementById('hero').src = img.dataset.full;
+      document.querySelectorAll('.thumbs img').forEach(t => t.classList.remove('active'));
+      img.classList.add('active');
+    });
+  });
+
+  // Floating hearts using emoji
+  (function makeHearts() {
+    const container = document.querySelector('.hearts');
+    function spawnHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerText = '❤️';
+
+      const size = 20 + Math.random() * 20;
+      heart.style.fontSize = size + 'px';
+
+      const startX = Math.random() * window.innerWidth;
+      const drift = (Math.random() * 120) - 60;
+      const duration = 3000 + Math.random() * 4000;
+
+      heart.style.left = startX + 'px';
+      heart.style.top = window.innerHeight + 'px';
+
+      container.appendChild(heart);
+
+      requestAnimationFrame(() => {
+        heart.style.transition = `transform ${duration}ms linear, opacity ${duration}ms ease-out`;
+        heart.style.transform = `translate(${drift}px, -${window.innerHeight + 200}px)`;
+        heart.style.opacity = 1;
+      });
+
+      setTimeout(() => {
+        heart.style.opacity = 0;
+      }, duration * 0.7);
+
+      setTimeout(() => {
+        heart.remove();
+      }, duration + 500);
+    }
+
+    setInterval(spawnHeart, 300);
+  })();
+  </script>
+
+</body>
+</html>
